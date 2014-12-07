@@ -184,7 +184,21 @@ endif
 
 my_compiler_dependencies :=
 
-##################################################################
+####################################################
+## Add LTO flags if LTO is turned on, supported
+## and we aren't building a host module.
+####################################################
+ifeq ($(strip $(LOCAL_NO_LTO_SUPPORT)),)
+  ifeq ($(strip $(LOCAL_CLANG)),)
+    ifeq ($(strip $(LOCAL_IS_HOST_MODULE)),)
+      my_cflags += $($(LOCAL_2ND_ARCH_VAR_PREFIX)TARGET_LTO_CFLAGS)
+      my_ldflags += $($(LOCAL_2ND_ARCH_VAR_PREFIX)TARGET_LTO_LDFLAGS)
+    endif
+  endif
+endif
+
+####################################################
+>>>>>>> a5b0de7... FML Optimizing.
 ## Add FDO flags if FDO is turned on and supported
 ## Please note that we will do option filtering during FDO build.
 ## i.e. Os->O2, remove -fno-early-inline and -finline-limit.
