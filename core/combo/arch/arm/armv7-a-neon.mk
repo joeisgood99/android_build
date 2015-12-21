@@ -46,7 +46,6 @@ endif
 endif
 
 arch_variant_cflags += \
-<<<<<<< HEAD
     -mfloat-abi=softfp \
     -mfpu=neon
 
