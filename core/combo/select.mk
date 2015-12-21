@@ -53,7 +53,7 @@ $(combo_var_prefix)HAVE_STRLCAT := 0
 $(combo_var_prefix)HAVE_KERNEL_MODULES := 0
 
 $(combo_var_prefix)GLOBAL_CFLAGS := -fno-exceptions -Wno-multichar
-<<<<<<< HEAD
+
 $(combo_var_prefix)RELEASE_CFLAGS := $(ARCHIDROID_GCC_CFLAGS_ARM) -O3 -Wstrict-aliasing=2
 ifneq ($(combo_target),HOST_)
 $(combo_var_prefix)RELEASE_CFLAGS += -Werror=strict-aliasing
