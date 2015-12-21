@@ -73,7 +73,6 @@ $(combo_2nd_arch_prefix)TARGET_STRIP := $($(combo_2nd_arch_prefix)TARGET_TOOLS_P
 
 $(combo_2nd_arch_prefix)TARGET_NO_UNDEFINED_LDFLAGS := -Wl,--no-undefined
 
-<<<<<<< HEAD
 # ArchiDroid & FML
 include $(BUILD_SYSTEM)/archidroid.mk
 
