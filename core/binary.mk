@@ -198,7 +198,6 @@ ifeq ($(strip $(LOCAL_NO_LTO_SUPPORT)),)
 endif
 
 ####################################################
->>>>>>> a5b0de7... FML Optimizing.
 ## Add FDO flags if FDO is turned on and supported
 ## Please note that we will do option filtering during FDO build.
 ## i.e. Os->O2, remove -fno-early-inline and -finline-limit.
