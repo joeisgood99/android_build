@@ -173,6 +173,15 @@ $(combo_2nd_arch_prefix)TARGET_LIBATOMIC := $(shell $($(combo_2nd_arch_prefix)TA
         $($(combo_2nd_arch_prefix)TARGET_GLOBAL_CFLAGS) -print-file-name=libatomic.a)
 endif
 
+# Define LTO (Link-Time Optimization) options.
+
+TARGET_LTO_CFLAGS :=
+TARGET_LTO_LDFLAGS :=
+ifneq ($(DEBUG_NO_LTO),yes)
+TARGET_LTO_CFLAGS := -flto -fno-toplevel-reorder -fuse-linker-plugin
+TARGET_LTO_LDFLAGS := -Wl,-flto
+endif
+
 KERNEL_HEADERS_COMMON := $(libc_root)/kernel/uapi
 KERNEL_HEADERS_ARCH   := $(libc_root)/kernel/uapi/asm-$(TARGET_$(combo_2nd_arch_prefix)ARCH)
 KERNEL_HEADERS := $(KERNEL_HEADERS_COMMON) $(KERNEL_HEADERS_ARCH)
