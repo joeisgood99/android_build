@@ -41,7 +41,7 @@ ARCHIDROID_GCC_CFLAGS := -O3 -fgcse-las -fgcse-sm -fipa-pta -fivopts -fomit-fram
 # Results with other toolchains may vary
 
 # These flags work fine in suggested compiler, but may cause ICEs in other compilers, comment if needed
-ARCHIDROID_GCC_CFLAGS += -fgraphite -fgraphite-identity
+#ARCHIDROID_GCC_CFLAGS += -fgraphite -fgraphite-identity
 
 # The following flags (-floop) require that your GCC has been configured with --with-isl
 # Additionally, applying any of them will most likely cause ICE in your compiler, so they're disabled
@@ -68,10 +68,10 @@ ARCHIDROID_GCC_LDFLAGS := -Wl,--sort-common
 ARCHIDROID_CLANG_CFLAGS := -O3 -Qunused-arguments -Wno-unknown-warning-option
 
 # Flags passed to CLANG preprocessor for C and C++
-ARCHIDROID_CLANG_CPPFLAGS := $(ARCHIDROID_CLANG_CFLAGS)
+#ARCHIDROID_CLANG_CPPFLAGS := $(ARCHIDROID_CLANG_CFLAGS)
 
 # Flags passed to linker (ld) of all C and C++ targets compiled with CLANG
-ARCHIDROID_CLANG_LDFLAGS := -Wl,--sort-common
+#ARCHIDROID_CLANG_LDFLAGS := -Wl,--sort-common
 
 # Flags that are used by GCC, but are unknown to CLANG. If you get "argument unused during compilation" error, add the flag here
 ARCHIDROID_CLANG_UNKNOWN_FLAGS := \
